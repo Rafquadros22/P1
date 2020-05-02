@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   $("#btn_test").on("click", function (event) {
     event.preventDefault();
     $("#emotion-dis").empty();
