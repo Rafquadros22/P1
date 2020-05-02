@@ -1,6 +1,7 @@
 $(document).ready(function () {
-  $("#btn_test").on("click", function(event){
+  $("#btn_test").on("click", function (event) {
     event.preventDefault();
+    $("#emotion-dis").empty();
     $.post({
       url: "https://limitless-tor-79246.herokuapp.com/cors/fpp/detect",
       data: {
@@ -14,37 +15,23 @@ $(document).ready(function () {
     }).then(function (response) {
       // Get reference to existing tbody element, create a new table row element
       console.log(response);
-     $("#image-display").attr("src", $("#inp_test").val());
-      
-       var emotions = response.faces[0].attributes.emotion;
-         
-       console.log(emotions);
-       
+      $("#image-display").attr("src", $("#inp_test").val());
+
+      var emotions = response.faces[0].attributes.emotion;
+
+      console.log(emotions);
+
       var emotionDisplay = JSON.stringify(emotions);
 
       // $("#emotion-dis").html(emotionDisplay);
-       
+
       // for loop that runs object emotions. that compares values with 75%. if else statement.
-    
-      
-      $.each(emotions, function(key, value){
-        $("#emotion-dis").append(key + " percentage: " + value + '<br>');
-         
+
+      $.each(emotions, function (key, value) {
+        $("#emotion-dis").append(
+          key + " : " + Math.round(value * 1) + " % " + "<br>"
+        );
       });
-
+    });
   });
-
-   });
-   
-    
-  });
-
-
-
-
-
-
-
-
-
-
+});
