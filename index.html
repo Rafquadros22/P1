@@ -8,14 +8,13 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-
-    <link rel="stylesheet" href="style.css" />
-    <title>In the feels</title>
+<link rel="stylesheet" href="style.css" />
+<title>In the feels</title>
   </head>
 
   <body>
     <header>
-      <div class="jumbotron jumbotron-fluid bg-success">
+      <div id="jumbo" class="jumbotron jumbotron-fluid bg-success">
         <div class="container">
           <h1 class="display-4 text-center">In the feels</h1>
           <p class="lead text-center">
@@ -26,6 +25,8 @@
         </div>
       </div>
     </header>
+    
+    
     <div class="container">
       <div class="row row-cols-1 row-cols-md-2">
         <div class="col mb-4">
@@ -42,7 +43,7 @@
                 We will predict what you want to listen too
               </p>
 
-              <p>HELLO WORLD</p>
+            
 
 
               <form action="/action_page.php">
@@ -57,32 +58,24 @@
         <div class="col mb-4">
           <div class="card">
             <div class="embed-responsive embed-responsive-16by9">
-              <iframe
-                id="video-player"
-                class="embed-responsive-item"
-                src="https://player.vimeo.com/video/137857207"
-                allowfullscreen
-              ></iframe>
+            <iframe id= "video" src="" class="embed-responsive-item"></iframe>
             </div>
+          
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <button id="video-submit" type="submit" class="btn btn-primary">
-                Submit
-              </button>
-            </div>
-          </div>
+              
+              <h5 class="card-title"></h5>
+           
+              <input type="button" id="btn_test2" value="submit">
+               </div>
+              </div>
+              </div>
         </div>
       </div>
     </div>
 
     <footer class="footer bg-success">
       <div class="fixed-bottom">
-        <small>Copyright © Rafael</small>
+        <small>Copyright ©</small>
       </div>
     </footer>
 
@@ -91,6 +84,7 @@
       integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
       crossorigin="anonymous"
     ></script>
-   <script src="script.js"></script> 
+    
+    <script src="script.js"></script> 
 </body>
 </html>
