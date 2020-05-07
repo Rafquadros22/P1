@@ -188,55 +188,69 @@ $(document).ready(function () {
   //  search();
 
   $("#btn_test2").on("click", function () {
+ 
     //array of random search terms (made them code related)
+ 
+    
     var searchTerms = [
-      "factory%20functions",
-      "data%20structures",
-      "array%20functions%20javascript",
-      "composition%20over%20inheritance",
-      "lambda%20functions",
-      "streams%20java",
-      "higher%20order%functions%javascript",
-      "functional%20programming",
-      "c++%20lambda%20functions",
-      "sorting%20algorithms",
+      "angry%20music",
+      "happy%20music",
     ];
 
     //a function to get a random search term
 
-    var getSearchTerm = () =>
-      searchTerms[Math.floor(Math.random() * (searchTerms.length - 1))];
+     
+    searchTerms[Math.floor(Math.random() * (searchTerms.length - 1))];
 
     //variable for your API_KEY
-
-    var YOUTUBE_API_KEY = "AIzaSyAYnfySKAuvwl898jg6aLT4quFJky9eXiw";
+    // var YOUTUBE_API_KEY = "AIzaSyARhin8yRhObPjOSwmc2Ez89sVT_ZcBE_o";
 
     //url from YouTube docs modified for my random term and API key,
 
-    var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=sorting%20algorithms&key=${YOUTUBE_API_KEY}`;
+    // var queryUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=angry%20music&key=AIzaSyARhin8yRhObPjOSwmc2Ez89sVT_ZcBE_o&key=&type=video`;
 
-    //fetch function following the aforementioned process
+      function videoRender(){
+    $.ajax({
+      type: "GET",
+      url :`https://www.googleapis.com/youtube/v3/search`,
+      data:{
+        key:"AIzaSyAgsj626_JWEqcXg_HB2ulaO9ZfWOK0A00",
+        q: "angry-music",
+        part:"snippet",
+        maxResults:5,
+        type: "video",
+        videoEmbeddable: true,
+      },
+      //success will calll a fucntion with data we receive back from our get request
+      success:function(data){
+        embedVideo(data);
+      },
+      // error will console log request failed
+      error: function(response){
+        console.log("request failed")
+        console.log(response);
+      }
+        })
+     
+       
+       function embedVideo(data){
+        $('#video').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
+        
+        $('h3').text(data.items[0].snippet.title)
+        
+        $('.description').text(data.items[0].snippet.description)
 
-    fetch(url)
-      .then((response) => response.json())
-
-      .then((data) => {
-        console.log(data);
-
-        console.log(data.items[0].id.videoId);
-
-        //console.log above is to help access proper data in the JSON
-
-        //object .
-
-        //set iframe source to proper URL (notice same dynamic strings
-
-        //used above)
-
-        $("#video").attr(
-          `src`,
-          `https://www.youtube.com/embed/${data.items[0].id.videoId}`
-        );
-      });
-  });
+       }
+        
+     
+     
+       };
+       videoRender();
+        });
 });
+
+ 
+  
+  
+ 
+
