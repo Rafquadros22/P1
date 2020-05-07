@@ -1,5 +1,7 @@
 $(document).ready(function () {
+  //global variables
   var globalKey = [];
+
   var globalValue;
 
   $("#image-display").hide();
@@ -47,12 +49,10 @@ $(document).ready(function () {
 
       // $("#emotion-dis").html(emotionDisplay);
 
-      // for loop that runs object emotions. that compares values with 75%. if else statement.
 
       $.each(emotions, function (key, value) {
         globalKey.push(emotions);
 
-       
         $("#emotion-dis").append(
           key + " : " + Math.round(value * 1) + " % " + "<br>"
         );
@@ -74,42 +74,120 @@ $(document).ready(function () {
         return b[1] - a[1];
       });
 
+      console.log("this is sortable", sortable[6][0]);
 
-      console.log("this is sortable", sortable);
+      var finalEmotion =  sortable[6][0];
 
+      console.log(finalEmotion)
+
+      var angryMusic = [
+        'https://www.youtube.com/embed/watch?v=SBjQ9tuuTJQ&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW',
+        'https://www.youtube.com/embed/watch?v=_4VCpTZye10&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW&index=2'
+      ]
+      var happyMusic = [
+        'https://www.youtube.com/embed/watch?v=SBjQ9tuuTJQ&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW',
+        'https://www.youtube.com/embed/watch?v=_4VCpTZye10&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW&index=2'
+      ]
+      var angryMusic = [
+        'https://www.youtube.com/embed/watch?v=SBjQ9tuuTJQ&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW',
+        'https://www.youtube.com/embed/watch?v=_4VCpTZye10&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW&index=2'
+      ]
+      var angryMusic = [
+        'https://www.youtube.com/embed/watch?v=SBjQ9tuuTJQ&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW',
+        'https://www.youtube.com/embed/watch?v=_4VCpTZye10&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW&index=2'
+      ]
+      var angryMusic = [
+        'https://www.youtube.com/embed/watch?v=SBjQ9tuuTJQ&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW',
+        'https://www.youtube.com/embed/watch?v=_4VCpTZye10&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW&index=2'
+      ]
+      var angryMusic = [
+        'https://www.youtube.com/embed/watch?v=SBjQ9tuuTJQ&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW',
+        'https://www.youtube.com/embed/watch?v=_4VCpTZye10&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW&index=2'
+      ]
+      var angryMusic = [
+        'https://www.youtube.com/embed/watch?v=SBjQ9tuuTJQ&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW',
+        'https://www.youtube.com/embed/watch?v=_4VCpTZye10&list=PL_MH8gOS_ETiNT1NF8B46JYHZe6fXWfVW&index=2'
+      ]
+
+      if(finalEmotion == "anger") {
+        var index = Math.floor(Math.random() * angryMusic.length)
+        var url = angryMusic[index]
+        $("#video").attr(
+          `src`,
+          `${url}`
+        )
+      }
+      if(finalEmotion == "happiness") {
+        var index = Math.floor(Math.random() * angryMusic.length)
+        var url = happyMusic[index]
+        $("#video").attr(
+          `src`,
+          `${url}`
+        )
+      }if(finalEmotion == "anger") {
+        var index = Math.floor(Math.random() * angryMusic.length)
+        var url = angryMusic[index]
+        $("#video").attr(
+          `src`,
+          `${url}`
+        )
+      }if(finalEmotion == "anger") {
+        var index = Math.floor(Math.random() * angryMusic.length)
+        var url = angryMusic[index]
+        $("#video").attr(
+          `src`,
+          `${url}`
+        )
+      }if(finalEmotion == "anger") {
+        var index = Math.floor(Math.random() * angryMusic.length)
+        var url = angryMusic[index]
+        $("#video").attr(
+          `src`,
+          `${url}`
+        )
+      }if(finalEmotion == "anger") {
+        var index = Math.floor(Math.random() * angryMusic.length)
+        var url = angryMusic[index]
+        $("#video").attr(
+          `src`,
+          `${url}`
+        )
+      }if(finalEmotion == "anger") {
+        var index = Math.floor(Math.random() * angryMusic.length)
+        var url = angryMusic[index]
+        $("#video").attr(
+          `src`,
+          `${url}`
+        )
+      }
+    
       function keyword() {
         //loop through all emotions
 
         var emotionsArray = [];
 
         for (var i = 0; i < emotions.length; i++) {
-          emotionsArray.push({ key: key, value: value });
+          emotionsArray.push({
+            key: key,
+            value: value,
+          });
         }
-
-
       }
 
       keyword();
     });
-
-
   });
 
-
-
-  function search() {
-    var q = $("#query").val();
-    var request = gapi.client.youtube.search.list({
-      q: q,
-      part: "snippet",
-    });
-  }
-
-
+  // function search() {
+  //   var q = $("#query").val();
+  //   var request = gapi.client.youtube.search.list({
+  //     q: q,
+  //     part: "snippet",
+  //   });
+  // }
+  //  search();
 
   $("#btn_test2").on("click", function () {
-    search();
-
     //array of random search terms (made them code related)
     var searchTerms = [
       "factory%20functions",
@@ -135,7 +213,7 @@ $(document).ready(function () {
 
     //url from YouTube docs modified for my random term and API key,
 
-    var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${getSearchTerm()}&key=${YOUTUBE_API_KEY}`;
+    var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=sorting%20algorithms&key=${YOUTUBE_API_KEY}`;
 
     //fetch function following the aforementioned process
 
