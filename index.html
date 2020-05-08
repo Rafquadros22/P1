@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  
+
   <title>In the feels</title>
 </head>
 
 <body>
   <header>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <header class="jumbotron jumbotron-fluid bg-success">
         <!-- <div class="container"></div> -->
@@ -44,6 +45,42 @@
 
               </form>
             </div>
+
+       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <header class="jumbotron">
+    <div id="jumbo" class="jumbotron jumbotron-fluid bg-success">
+      <div class="container">
+        <h1 class="display-4 text-center">In the feels</h1>
+        <p class="lead text-center">
+
+          Are you "in your feels"? try this!
+
+        </p>
+      </div>
+
+
+    </div>
+  </header>
+
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2">
+      <div class="col mb-4">
+        <div class="card">
+          <img id="image-display" src="" class="card-img-top" alt="hold my place" />
+          <div class="card-body">
+            <h5 id="emotion-dis" class="card-title"></h5>
+            <p class="card-text">
+              We will predict what you want to listen too
+            </p>
+
+
+            <form action="/action_page.php">
+              <input type="text" id="inp_test"><br /><br />
+              <input type="button" id="btn_test" value="submit">
+
+            </form>
+
           </div>
         </div>
 
