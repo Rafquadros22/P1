@@ -112,19 +112,25 @@ $(document).ready(function() {
           },
         });
 
+          
         function embedVideo(data) {
           //used math.floor to loop  throught list of videos 
+         
           var index = Math.floor(Math.random() * 50);
-          $("#video").attr(
+    
+            $("#video").attr(
             "src",
             "https://www.youtube.com/embed/" + data.items[index].id.videoId
           );
-
+            
+     
+         
           $("h3").text(data.items[0].snippet.title);
 
           $(".description").text(data.items[0].snippet.description);
         }
       }
+   
       videoRender();
 
       $("#video-card").show();
