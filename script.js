@@ -57,7 +57,7 @@ $(document).ready(function() {
           type: "GET",
           url: `https://www.googleapis.com/youtube/v3/search`,
           data: {
-            key: "AIzaSyAgsj626_JWEqcXg_HB2ulaO9ZfWOK0A00",
+            key: "AIzaSyBm_RfMfCAaNIrnk-o7KVVuzCHaWfCOhd4",
             q: finalEmotion+"music",
             part: "snippet",
             maxResults: 50,
