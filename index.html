@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,30 +6,32 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  
-  <title>In the feels</title>
+    <title>In the feels</title>
 </head>
-
 <body>
-  <header>
+  <nav id ="nav-head"class="navbar navbar-light bg-dark">
+    <span class="navbar-brand mb-0 h1">In the feels</span>
+  </nav>
+    
+ <div id="image-select">
+<div class="container justify-content">
+  <div id ="list" class="list-group w-50 p-3 ">
+    <a id="anger-btn"  href=""  class="list-group-item list-group-item-action">Angry</a>
+    <a id="happy-btn"  href="" class="list-group-item list-group-item-action">Happy</a>
+    <a id="sad-btn" href="" class="list-group-item list-group-item-action">Sad</a>
+    <a id="fear-btn"  class="list-group-item list-group-item-action">Fear</a>
+    <a id="disgust-btn"  class="list-group-item list-group-item-action">Disgust</a>
+    <a id="suprise-btn"  class="list-group-item list-group-item-action">Suprise</a>
+  </div>
+</div>`
+</div>
+
+ 
+
+
   
-    <header class="jumbotron jumbotron-fluid bg-success">
-     
-          <h1 class="display-4 text-center">In the feels</h1>
-          <p class="lead text-center">
-          Are you "in your feels"? try this!</p>
- </header>
-
-
-      
- 
-
-    <div id="results" ></div>
- 
-   
-   
-    <div class="container">
-      <div class="row row-cols-1 row-cols-md-2">
+     <div class="container">
+  <div class="row row-cols-1 row-cols-md-2">
         <div class="col mb-4">
           <div class="card">
             <img id="image-display" src="" class="card-img-top" alt="hold my place" />
@@ -43,38 +44,33 @@
             </div>
           </div>
         </div>
-
-
-         
-  
-              
-      <div class="col mb-4">
+        
+      
+      
+        <div class="col mb-4">
           <div id="video-card"class="card">
             <div class="embed-responsive embed-responsive-16by9">
-            <iframe id="video" src="" class="embed-responsive-item"></iframe>
-              <h3></h3>
-            <div class="description"></div>
+            <iframe id="video" src="" class="embed-responsive-item">  <input type="button" id="next_video" value="submit" class="submitbtn w-25 h-25" >   </iframe>
             </div>
-            <input type="button" id="next_video" value="submit" class="submitbtn w-25 h-25" >  
+            <h3></h3>
+            <div class="description"></div>
           </div>
         </div>
       </div>
     </div>
-
-          
-
     
 
+
+    
     <footer class="footer bg-success">
       <div class="fixed-bottom">
         <small>Copyright ©</small>
       </div>
     </footer>
-     
-    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
