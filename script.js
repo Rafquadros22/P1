@@ -1,15 +1,22 @@
 $(document).ready(function () {
-  //global variables
+
+  //globalKey to an empty array
   var globalKey = [];
-
-  var angryLink = $("<a> " , {
-    text: "",
-    title: "some title",
-    href: "https://kferg-images.s3.amazonaws.com/anger.jpeg",
-  }).appendTo("#list");
-  $("#inp_test").val(angryLink[0]);
-  console.log(angryLink[0]);
-
+  $("#anger-btn").click(function(){
+    $("#inp_test").val(  "https://kferg-images.s3.amazonaws.com/anger.jpeg");
+  });
+  $("#sad-btn").click(function(){
+    $("#inp_test").val("https://kferg-images.s3.amazonaws.com/sadness.jpeg");
+  });
+  $("#happy-btn").click(function(){
+    $("#inp_test").val(  "https://kferg-images.s3.amazonaws.com/happiness.jpg");
+  });
+  $("#disgust-btn").click(function(){
+    $("#inp_test").val(  "https://kferg-images.s3.amazonaws.com/disgust.jpg");
+  });
+  $("#suprise-btn").click(function(){
+    $("#inp_test").val( "https://kferg-images.s3.amazonaws.com/surprise.jpg");
+  });
 
   //hides image container
   $("#image-display").hide();
@@ -23,6 +30,9 @@ $(document).ready(function () {
     $("#image-display").show();
     event.preventDefault();
     $("#emotion-dis").empty();
+
+    //ajax call for face ++
+
     $.post({
       url: "https://limitless-tor-79246.herokuapp.com/cors/fpp/detect",
       data: {
@@ -38,19 +48,23 @@ $(document).ready(function () {
       $("#image-display").attr("src", $("#inp_test").val());
       var emotions = response.faces[0].attributes.emotion;
       // console.log(emotions);
-      var emotionDisplay = JSON.stringify(emotions);
-      //
+
+      // var emotionDisplay = JSON.stringify(emotions);
+     //goes through emotions variable and get the emotion and value percentage
+
       $.each(emotions, function (key, value) {
         globalKey.push(emotions);
         $("#emotion-dis").append(
           key + " : " + Math.round(value * 1) + " % " + "<br>"
         );
       });
+
+      // sets key into globalkey array
       var key = Object.keys(globalKey);
+      //setsvalue into global key array
       var value = Object.values(globalKey);
       var listEmotion = value[0];
-      // console.log("this is key", key);
-      // console.log("this is value", value[0]);
+
       var sortable = [];
       for (var emo in listEmotion) {
         sortable.push([emo, listEmotion[emo]]);
@@ -84,15 +98,20 @@ $(document).ready(function () {
             console.log(response);
           },
         });
+
+      //function to embed the video
         function embedVideo(data) {
+          console.log(data)
+
           //used math.floor to loop  throught list of videos
           var index = Math.floor(Math.random() * 50);
           $("#video").attr(
             "src",
             "https://www.youtube.com/embed/" + data.items[index].id.videoId
           );
-          $("h3").text(data.items[0].snippet.title);
-          $(".description").text(data.items[0].snippet.description);
+
+          $("h3").text(data.items[index].snippet.title);
+
         }
       }
       videoRender();

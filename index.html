@@ -9,33 +9,29 @@
     <title>In the feels</title>
 </head>
 <body>
-  <nav id ="nav-head"class="navbar navbar-light bg-dark">
-    <span class="navbar-brand mb-0 h1">In the feels</span>
-  </nav>
-    
- <div id="image-select">
-<div class="container justify-content">
-  <div id ="list" class="list-group w-50 p-3 ">
-    <a id="anger-btn"  href=""  class="list-group-item list-group-item-action">Angry</a>
-    <a id="happy-btn"  href="" class="list-group-item list-group-item-action">Happy</a>
-    <a id="sad-btn" href="" class="list-group-item list-group-item-action">Sad</a>
-    <a id="fear-btn"  class="list-group-item list-group-item-action">Fear</a>
-    <a id="disgust-btn"  class="list-group-item list-group-item-action">Disgust</a>
-    <a id="suprise-btn"  class="list-group-item list-group-item-action">Suprise</a>
+
+    <nav id = "nav-head" class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">Feelings</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+       <a id="anger-btn"  class="nav-item nav-link text-dark"  href="#">Angry</a>
+      <a id= "happy-btn" class="nav-item nav-link text-dark"  href="#" >Happy</a>
+      <a id="sad-btn" class="nav-item nav-link text-dark" href="#">Sad</a>
+      <a id="disgust-btn"  class="nav-item nav-link text-dark" href="#">Disgusted</a>
+      <a id="suprise-btn"class="nav-item nav-link text-dark" href="#">Suprised</a>
+    </div>
   </div>
-</div>`
-</div>
+</nav>
+     <div class="container ">
 
- 
-
-
-  
-     <div class="container">
   <div class="row row-cols-1 row-cols-md-2">
         <div class="col mb-4">
           <div class="card">
-            <img id="image-display" src="" class="card-img-top" alt="hold my place" />
-            <div class="card-body">
+            <img id="image-display" src="" class="card-img-top \" alt="hold my place" height="320" width="620"/>
+            <div class="card-body ">
               <h5 id="emotion-dis" class="card-title"></h5>    
               <form action="/action_page.php">
                 <input type="text" id="inp_test" class="input-box w-50 h-25" accept=".jpeg*"><br /><br />
@@ -44,9 +40,7 @@
             </div>
           </div>
         </div>
-        
-      
-      
+
         <div class="col mb-4">
           <div id="video-card"class="card">
             <div class="embed-responsive embed-responsive-16by9">
@@ -58,11 +52,9 @@
         </div>
       </div>
     </div>
-    
 
+    <footer class="footer bg-dark">
 
-    
-    <footer class="footer bg-success">
       <div class="fixed-bottom">
         <small>Copyright ©</small>
       </div>
