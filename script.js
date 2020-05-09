@@ -40,11 +40,13 @@ $(document).ready(function() {
 
       method: "POST",
     }).then(function(response) {
-      // Get reference to existing tbody element, create a new table row element
+     
 
-      // console.log(response);
+      console.log(response);
+  
 
       $("#image-display").attr("src", $("#inp_test").val());
+      
 
       var emotions = response.faces[0].attributes.emotion;
 
@@ -92,7 +94,7 @@ $(document).ready(function() {
           url: `https://www.googleapis.com/youtube/v3/search`,
           data: {
             key: "AIzaSyAgsj626_JWEqcXg_HB2ulaO9ZfWOK0A00",
-            q: finalEmotion,
+            q: finalEmotion+"music",
             part: "snippet",
             maxResults: 50,
             type: "video",
